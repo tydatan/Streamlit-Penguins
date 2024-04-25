@@ -75,8 +75,7 @@ def main():
     # Create a pie chart for species prediction
     st.subheader('')
     fig, ax = plt.subplots(figsize=(6, 6))
-    ax.pie(rf_prediction_species[0], labels=predicted_labels_species, autopct='%1.1f%%', startangle=140,
-           colors=['#5E3C99', '#9B5DAB', '#8075C4'])
+    ax.pie(rf_prediction_species[0], labels=predicted_labels_species, autopct='%1.1f%%', startangle=140)
     ax.axis('equal')
     st.pyplot(fig)
 
@@ -105,8 +104,7 @@ def main():
     # Create a pie chart for gender prediction
     st.subheader('')
     fig, ax = plt.subplots(figsize=(6, 6))
-    ax.pie(rf_prediction_sex[0], labels=predicted_labels_sex, autopct='%1.1f%%', startangle=140,
-           colors=['#5E3C99', '#9B5DAB'])
+    ax.pie(rf_prediction_sex[0], labels=predicted_labels_sex, autopct='%1.1f%%', startangle=140)
     ax.axis('equal')
     st.pyplot(fig)
 
@@ -139,7 +137,7 @@ def main():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     plt.figure(figsize=(8, 6))
     sns.set_style("dark")
-    sns.countplot(x='species', data=df, palette=['#5E3C99', '#9B5DAB', '#8075C4'])
+    sns.countplot(x='species', data=df,)
     plt.title('Countplot of Species')
     plt.xlabel('Species')
     plt.ylabel('Count')
@@ -153,7 +151,7 @@ def main():
     st.subheader('Countplot of Sex')
     plt.figure(figsize=(8, 6))
     sns.set_style("dark")
-    sns.countplot(x='sex', data=df, palette=['#5E3C99', '#9B5DAB'])
+    sns.countplot(x='sex', data=df)
     plt.title('Countplot of Sex')
     plt.xlabel('Sex')
     plt.ylabel('Count')
@@ -169,7 +167,7 @@ def main():
         st.subheader('')
         st.write(f'Distribution of {col}')
         plt.figure(figsize=(8, 6))
-        sns.histplot(df[col], bins=20, kde=True, edgecolor='black', color='#542788')
+        sns.histplot(df[col], bins=20, kde=True, edgecolor='black')
         plt.xlabel(col)
         plt.ylabel('Frequency')
         plt.tight_layout()
@@ -179,7 +177,7 @@ def main():
     st.subheader('')
     st.subheader('')
     st.subheader('Pairplot of Numerical Variables')
-    pairplot = sns.pairplot(df, hue='species', palette=['#5E3C99', '#9B5DAB', '#8075C4'])
+    pairplot = sns.pairplot(df, hue='species')
     st.pyplot(pairplot.fig)
 
 
