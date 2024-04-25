@@ -167,7 +167,7 @@ def main():
         st.subheader('')
         st.write(f'Distribution of {col}')
         plt.figure(figsize=(8, 6))
-        sns.histplot(df[col], bins=20, kde=True, edgecolor='black')
+        sns.histplot(df[col], bins=20, kde=True)
         plt.xlabel(col)
         plt.ylabel('Frequency')
         plt.tight_layout()
